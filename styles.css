@@ -456,7 +456,7 @@ a {
 #contact .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 #contact .contact-icons {
@@ -466,7 +466,7 @@ a {
 }
 
 #contact .contact-icons a {
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: #3D3D3D;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
