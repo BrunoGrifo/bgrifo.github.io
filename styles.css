@@ -241,15 +241,20 @@ a {
   padding-left: 2rem;
 }
 
+#about .about-content .about-text .lead {
+  font-size: clamp(0.9rem, 1.5vw, 1.4rem);
+}
+
 .cv-btn {
   display: inline-block;
   margin-top: 1.2rem;
   padding: 0.5rem 1.4rem;
   border: 2px solid #343a40;
   border-radius: 4px;
-  font-size: 0.95rem;
+  font-size: clamp(0.5rem, 2.5vw, 0.95rem);
   color: #212529;
   letter-spacing: 0.04em;
+  white-space: nowrap;
   transition: background 0.25s ease, color 0.25s ease;
 }
 
@@ -585,25 +590,50 @@ a {
 }
 
 @media (max-width: 768px) {
+  #about {
+    align-items: stretch;
+  }
+  #about .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
   #about .about-content {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  #about .about-content::-webkit-scrollbar {
+    display: none;
   }
   #about .about-content .about-image {
-    width: 300px;
+    width: 150px;
     margin: auto;
     margin-top: 1rem;
+    flex-shrink: 0;
+  }
+  #about .about-content .about-image .cv-btn {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
   }
   #about .about-content .about-text {
     margin: 1rem 1rem;
     padding-left: 1rem;
   }
   #about .about-content .about-text .lead {
-    font-size: 1.2rem;
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
   }
   #about .about-content .about-text ul {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
