@@ -52,12 +52,14 @@ window.addEventListener('load', initIndex);
 window.addEventListener('wheel', (e) => {
   if (!shouldSnap()) return;
 
-  // Let the timeline's inner scroll handle its own wheel events
-  if (timelineContent && timelineContent.contains(e.target)) {
-    const { scrollTop, scrollHeight, clientHeight } = timelineContent;
-    const atTop    = scrollTop <= 0;
-    const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
-    if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) return;
+  // Let inner-scrollable containers handle their own wheel events
+  for (const inner of [timelineContent, workContent]) {
+    if (inner && inner.contains(e.target)) {
+      const { scrollTop, scrollHeight, clientHeight } = inner;
+      const atTop    = scrollTop <= 0;
+      const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+      if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) return;
+    }
   }
 
   e.preventDefault();
@@ -150,6 +152,7 @@ if (skillsSection) skillsObserver.observe(skillsSection);
 
 // ── Timeline item animations ──────────────────────────────────────────────────
 
+const workContent = document.querySelector('#work .work-content');
 const timelineContent = document.querySelector('#timeline .timeline-content');
 const timelineWrapper  = document.querySelector('.timeline-wrapper');
 const items = document.querySelectorAll('.timeline-content li');

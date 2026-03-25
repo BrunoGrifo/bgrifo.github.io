@@ -458,6 +458,15 @@ a {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   gap: 3rem;
+  max-height: calc(100vh - 14rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#work .work-content::-webkit-scrollbar {
+  display: none;
 }
 
 #work .work-content div {
