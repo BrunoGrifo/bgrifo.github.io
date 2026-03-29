@@ -854,4 +854,24 @@ a {
   #timeline .timeline-content {
     max-height: 55vh;
   }
+
+  /* Footer */
+  #contact {
+    height: auto;
+    padding: 1.2rem 0;
+  }
+
+  #contact .contact-icons {
+    gap: 1.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #contact .contact-icons a {
+    font-size: 1.6rem;
+  }
+
+  #contact .contact-icons a span {
+    font-size: 0.9rem;
+  }
 }
