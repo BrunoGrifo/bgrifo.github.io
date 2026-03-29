@@ -248,14 +248,9 @@ a {
   font-size: clamp(1.1rem, 1.8vw, 1.7rem);
 }
 
-#about .about-image-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  border: none;
+#about .about-text-box {
   border-radius: 12px;
-  padding: 1.2rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
